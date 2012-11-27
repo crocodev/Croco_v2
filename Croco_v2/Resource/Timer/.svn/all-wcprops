@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer
+END
+timer_digits_active.png
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/timer_digits_active.png
+END
+timer_forest.png
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/timer_forest.png
+END
+itm_timer_run_norm.png
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_run_norm.png
+END
+timer_digits_light.png
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/timer_digits_light.png
+END
+timer_digits_passive.png
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/timer_digits_passive.png
+END
+itm_timer_norm_light.png
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_norm_light.png
+END
+itm_timer_run_sel.png
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_run_sel.png
+END
+itm_timer_stop_norm.png
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_stop_norm.png
+END
+itm_timer_sel.png
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_sel.png
+END
+itm_timer_norm.png
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_norm.png
+END
+itm_timer_stop_sel.png
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/activity-dev/!svn/ver/35/trunk/Croco/game1/Resource/Timer/itm_timer_stop_sel.png
+END

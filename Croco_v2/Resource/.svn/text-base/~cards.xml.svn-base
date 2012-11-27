@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<Cards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/development/Android%20development/projects/activity/cocos2d-x/cocos2d-1.0.1-x-0.9.1/game1/Resource/crd.xsd">
+  <Card id="1" cardvalue="3">
+    <O red="0">Word1</O>
+    <R red="0">Word2</R>
+    <P red="0">Word3</P>
+  </Card>
+  <Card id="2" cardvalue="5">
+    <O red="0">Word4</O>
+    <R red="1">Word5</R>
+    <P red="0">Word6</P>
+  </Card>
+  <Card id="3" cardvalue="5">
+    <O red="0">Word7</O>
+    <R red="0">Word8</R>
+    <P red="0">Word9</P>
+  </Card>
+</Cards>
+
