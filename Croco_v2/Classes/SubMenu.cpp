@@ -60,7 +60,7 @@ void SubMenu::itm_4groupsCallback(CCObject* pSender)
 }
 void SubMenu::GoGroupCustomization(int GameMode)
 {
-	CCScene* pScene = CCScene::node();
+	CCScene* pScene = CCScene::create();
 	CCLayer* pLayer = new GroupCustomization(GameMode);
 	pScene->addChild(pLayer,0);
 	CCScene* s = CCTransitionFade::transitionWithDuration(1.0f, pScene);

@@ -13,7 +13,7 @@ void GroupCustomization::itm_startCallback(CCObject* pSender)
 	//if exists fails move to fail page
 	if(check) pScrollLayer->moveToPage(check); else
 	{
-	CCScene* pScene = CCScene::node();	
+	CCScene* pScene = CCScene::create();
 	CCLayer* pLayer = new ActionLayer(m_GameMode,m_groups[0],m_groups[1],m_groups[2],m_groups[3]);
 	pScene->addChild(pLayer);
 	
@@ -450,7 +450,7 @@ void GroupCustomization::setPageIndicator(int currentPage, int count)
 
 	//draw indicator
 	this->removeChildByTag(PAGE_INDICATOR,1);
-	CCLayer* pi = CCLayer::node();
+	CCLayer* pi = CCLayer::create();
 	addChild(pi,2,PAGE_INDICATOR);
 	//pi->setPosition(ccp(0,0));
 	CCSprite* dots[4];
