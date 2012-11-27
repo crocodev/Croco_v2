@@ -17,7 +17,6 @@ public:
 	TextureCacheLayer();
 	void loadMainMenu();
 	void loadingCallBack(cocos2d::CCObject *obj);
-    
 private:
 	cocos2d::CCLabelTTF *m_pLabelLoading;
 	cocos2d::CCLabelTTF *m_pLabelPercent;

@@ -13,10 +13,10 @@ layerSN_icons::layerSN_icons()
     //screen center
     CCSize size = CCDirector::sharedDirector()->getWinSize();
     
-    CCMenuItemImage *itm_Tw = CCMenuItemImage::itemWithNormalImage(SN_icons_twitter_icon,SN_icons_twitter_icon,this,menu_selector(layerSN_icons::itm_TwCallback));
-    CCMenuItemImage *itm_Fb = CCMenuItemImage::itemWithNormalImage(SN_icons_facebook_icon,SN_icons_facebook_icon,this,menu_selector(layerSN_icons::itm_FbCallback));
-    CCMenuItemImage *itm_Vk = CCMenuItemImage::itemWithNormalImage(SN_icons_vkontakte_icon,SN_icons_vkontakte_icon,this,menu_selector(layerSN_icons::itm_VkCallback));
-    CCMenu *mnSN_icons = CCMenu::menuWithItems(itm_Tw,itm_Fb,itm_Vk,NULL);
+    CCMenuItemImage *itm_Tw = CCMenuItemImage::create(SN_icons_twitter_icon,SN_icons_twitter_icon,this,menu_selector(layerSN_icons::itm_TwCallback));
+    CCMenuItemImage *itm_Fb = CCMenuItemImage::create(SN_icons_facebook_icon,SN_icons_facebook_icon,this,menu_selector(layerSN_icons::itm_FbCallback));
+    CCMenuItemImage *itm_Vk = CCMenuItemImage::create(SN_icons_vkontakte_icon,SN_icons_vkontakte_icon,this,menu_selector(layerSN_icons::itm_VkCallback));
+    CCMenu *mnSN_icons = CCMenu::create(itm_Tw,itm_Fb,itm_Vk,NULL);
     mnSN_icons->alignItemsHorizontallyWithPadding(size.width/24);
     addChild(mnSN_icons);
     mnSN_icons->setPosition(ccp(size.width*3/4,size.height/16));

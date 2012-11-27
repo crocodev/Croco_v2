@@ -26,7 +26,7 @@ class ActionLayer;
 #define FONT_NAME			"fonts/MinionPro-Regular.otf"/*"fonts/Neucha.ttf"*/
 #define FONT_SIZE			22
 
-#define PATH_MAX_FILE    255
+#define PATH_MAX_FILE       255
 
 //less
 #define ADDIMAGE(IMG)                   CCTextureCache::sharedTextureCache()->addImageAsync(IMG, this, callfuncO_selector(TextureCacheLayer::loadingCallBack));
@@ -163,9 +163,9 @@ class ActionLayer;
 #define _sndCheckcard               "music/sndCheckcard.mp3"
 #define _sndForall                  "music/sndForall.mp3"
 #define _sndMovescreen              "music/sndMovescreen.wav"
-#define _sndSwipe                   "music/sndSwipe.mp3"
-#define _sndTimer                   "music/sndTimer.mp3"
-#define _sndToken                   "music/sndToken.mp3"
+#define _sndSwipe                   "music/sndSwipe.wav"
+#define _sndTimer                   "music/sndTimer.wav"
+#define _sndToken                   "music/sndToken.wav"
 #define _sndVictory                 "music/sndVictory.wav"
 
 //Положение источника света
