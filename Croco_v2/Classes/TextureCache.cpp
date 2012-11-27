@@ -140,6 +140,7 @@ TextureCacheLayer::TextureCacheLayer()
 void TextureCacheLayer::loadingCallBack(CCObject *obj)
 {
     loadMainMenu();
+    
     /*
 	++m_nNumberOfLoadedSprites;
 	char tmp[10];
