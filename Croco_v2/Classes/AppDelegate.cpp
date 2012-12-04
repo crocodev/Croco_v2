@@ -41,10 +41,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setOpenGLView(pEGLView);
     
     // Set the design resolution
-    //pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionNoBorder);
+    pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionShowAll);
     
 	CCSize frameSize = pEGLView->getFrameSize();
-    
     CCFileUtils::sharedFileUtils()->setResourceDirectory(mediumResource.directory);
     
     
@@ -58,13 +57,13 @@ bool AppDelegate::applicationDidFinishLaunching()
     if (frameSize.height > mediumResource.size.height)
 	{
 		CCFileUtils::sharedFileUtils()->setResourceDirectory(largeResource.directory);
-        //pDirector->setContentScaleFactor(designResolutionSize.height/largeResource.size.height);
+        pDirector->setContentScaleFactor(frameSize.height/designResolutionSize.height);
 	}
     // if the frame's height is larger than the height of small resource size, select medium resource.
     else 
     {
         CCFileUtils::sharedFileUtils()->setResourceDirectory(mediumResource.directory);
-        //pDirector->setContentScaleFactor(mediumResource.size.height/designResolutionSize.height);
+        pDirector->setContentScaleFactor(frameSize.height/designResolutionSize.height);
     }    
     
     // turn on display FPS
