@@ -228,6 +228,7 @@
 		8448CC2E1663F4EE000382C8 /* facebook-ios-sdk in Resources */ = {isa = PBXBuildFile; fileRef = 8448CC2D1663F4EE000382C8 /* facebook-ios-sdk */; };
 		8448CC301663F509000382C8 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448CC2F1663F509000382C8 /* libfacebook_ios_sdk.a */; };
 		8448CC321664074D000382C8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448CC311664074D000382C8 /* Accounts.framework */; };
+		84DEDDAA166E755C00D58F76 /* icon-hhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DEDDA9166E755C00D58F76 /* icon-hhd.png */; };
 		84E5F28B16691C7000E0C93D /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F28A16691C7000E0C93D /* ipad */; };
 /* End PBXBuildFile section */
 
@@ -701,6 +702,7 @@
 		8448CC2F1663F509000382C8 /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfacebook_ios_sdk.a; path = "Croco_v2/facebook-ios-sdk/libfacebook_ios_sdk.a"; sourceTree = "<group>"; };
 		8448CC311664074D000382C8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84CC6C2016690A2A0019B3FC /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = Classes/AppMacros.h; sourceTree = "<group>"; };
+		84DEDDA9166E755C00D58F76 /* icon-hhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-hhd.png"; sourceTree = "<group>"; };
 		84E5F28A16691C7000E0C93D /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -730,6 +732,7 @@
 		8448C9091663EC3E000382C8 = {
 			isa = PBXGroup;
 			children = (
+				84DEDDA9166E755C00D58F76 /* icon-hhd.png */,
 				8448CC311664074D000382C8 /* Accounts.framework */,
 				8448CC2F1663F509000382C8 /* libfacebook_ios_sdk.a */,
 				8448CC1C1663F05F000382C8 /* Twitter.framework */,
@@ -1709,6 +1712,7 @@
 				8448CC2E1663F4EE000382C8 /* facebook-ios-sdk in Resources */,
 				84E5F28B16691C7000E0C93D /* ipad in Resources */,
 				844405071669245300747D2A /* hd in Resources */,
+				84DEDDAA166E755C00D58F76 /* icon-hhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2002,6 +2006,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2036,6 +2041,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
