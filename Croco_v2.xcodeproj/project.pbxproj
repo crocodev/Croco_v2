@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844405071669245300747D2A /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 844405061669245300747D2A /* hd */; };
 		8448C9191663EC3E000382C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448C9181663EC3E000382C8 /* QuartzCore.framework */; };
 		8448C91B1663EC3E000382C8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448C91A1663EC3E000382C8 /* OpenGLES.framework */; };
 		8448C91D1663EC3E000382C8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448C91C1663EC3E000382C8 /* OpenAL.framework */; };
@@ -214,38 +215,24 @@
 		8448CBE61663EFE8000382C8 /* SubMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8448CBD71663EFE8000382C8 /* SubMenu.cpp */; };
 		8448CBE71663EFE8000382C8 /* TextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8448CBD91663EFE8000382C8 /* TextureCache.cpp */; };
 		8448CBE81663EFE8000382C8 /* VKConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448CBDC1663EFE8000382C8 /* VKConnectViewController.m */; };
-		8448CC031663F010000382C8 /* anim in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBEA1663F010000382C8 /* anim */; };
-		8448CC041663F010000382C8 /* c_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBEB1663F010000382C8 /* c_big.png */; };
 		8448CC051663F010000382C8 /* cards.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBEC1663F010000382C8 /* cards.xml */; };
-		8448CC061663F010000382C8 /* desk-HD.png in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBED1663F010000382C8 /* desk-HD.png */; };
-		8448CC071663F010000382C8 /* desk.png in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBEE1663F010000382C8 /* desk.png */; };
 		8448CC081663F010000382C8 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBEF1663F010000382C8 /* fonts */; };
-		8448CC091663F010000382C8 /* GameMenu in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF01663F010000382C8 /* GameMenu */; };
-		8448CC0A1663F010000382C8 /* GroupCustomization in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF11663F010000382C8 /* GroupCustomization */; };
-		8448CC0B1663F010000382C8 /* MainMenu in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF21663F010000382C8 /* MainMenu */; };
-		8448CC0C1663F010000382C8 /* mmdot in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF31663F010000382C8 /* mmdot */; };
 		8448CC0D1663F010000382C8 /* music in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF41663F010000382C8 /* music */; };
 		8448CC0E1663F010000382C8 /* pointer_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF51663F010000382C8 /* pointer_2.png */; };
-		8448CC0F1663F010000382C8 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF61663F010000382C8 /* pointer.png */; };
 		8448CC101663F010000382C8 /* pointer.psd in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF71663F010000382C8 /* pointer.psd */; };
-		8448CC111663F010000382C8 /* RewindAnimation in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF81663F010000382C8 /* RewindAnimation */; };
-		8448CC121663F010000382C8 /* RightControl in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBF91663F010000382C8 /* RightControl */; };
-		8448CC131663F010000382C8 /* SN_icons in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBFA1663F010000382C8 /* SN_icons */; };
 		8448CC141663F010000382C8 /* sonic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBFB1663F010000382C8 /* sonic.plist */; };
 		8448CC151663F010000382C8 /* sonic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBFC1663F010000382C8 /* sonic.png */; };
 		8448CC161663F010000382C8 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBFD1663F010000382C8 /* sounds */; };
-		8448CC171663F010000382C8 /* SubMenu in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBFE1663F010000382C8 /* SubMenu */; };
-		8448CC181663F010000382C8 /* Timer in Resources */ = {isa = PBXBuildFile; fileRef = 8448CBFF1663F010000382C8 /* Timer */; };
-		8448CC191663F010000382C8 /* tokens in Resources */ = {isa = PBXBuildFile; fileRef = 8448CC001663F010000382C8 /* tokens */; };
-		8448CC1A1663F010000382C8 /* winners in Resources */ = {isa = PBXBuildFile; fileRef = 8448CC011663F010000382C8 /* winners */; };
 		8448CC1B1663F010000382C8 /* wordbase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8448CC021663F010000382C8 /* wordbase.xml */; };
 		8448CC1D1663F05F000382C8 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448CC1C1663F05F000382C8 /* Twitter.framework */; };
 		8448CC2E1663F4EE000382C8 /* facebook-ios-sdk in Resources */ = {isa = PBXBuildFile; fileRef = 8448CC2D1663F4EE000382C8 /* facebook-ios-sdk */; };
 		8448CC301663F509000382C8 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448CC2F1663F509000382C8 /* libfacebook_ios_sdk.a */; };
 		8448CC321664074D000382C8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8448CC311664074D000382C8 /* Accounts.framework */; };
+		84E5F28B16691C7000E0C93D /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F28A16691C7000E0C93D /* ipad */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		844405061669245300747D2A /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hd; path = Resources/hd; sourceTree = "<group>"; };
 		8448C9141663EC3E000382C8 /* Croco_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Croco_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8448C9181663EC3E000382C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8448C91A1663EC3E000382C8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -700,35 +687,21 @@
 		8448CBDA1663EFE8000382C8 /* TextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureCache.h; path = Classes/TextureCache.h; sourceTree = "<group>"; };
 		8448CBDB1663EFE8000382C8 /* VKConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKConnectViewController.h; path = Classes/VKConnectViewController.h; sourceTree = "<group>"; };
 		8448CBDC1663EFE8000382C8 /* VKConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKConnectViewController.m; path = Classes/VKConnectViewController.m; sourceTree = "<group>"; };
-		8448CBEA1663F010000382C8 /* anim */ = {isa = PBXFileReference; lastKnownFileType = folder; name = anim; path = Resource/anim; sourceTree = "<group>"; };
-		8448CBEB1663F010000382C8 /* c_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = c_big.png; path = Resource/c_big.png; sourceTree = "<group>"; };
 		8448CBEC1663F010000382C8 /* cards.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = cards.xml; path = Resource/cards.xml; sourceTree = "<group>"; };
-		8448CBED1663F010000382C8 /* desk-HD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "desk-HD.png"; path = "Resource/desk-HD.png"; sourceTree = "<group>"; };
-		8448CBEE1663F010000382C8 /* desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = desk.png; path = Resource/desk.png; sourceTree = "<group>"; };
 		8448CBEF1663F010000382C8 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = Resource/fonts; sourceTree = "<group>"; };
-		8448CBF01663F010000382C8 /* GameMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GameMenu; path = Resource/GameMenu; sourceTree = "<group>"; };
-		8448CBF11663F010000382C8 /* GroupCustomization */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GroupCustomization; path = Resource/GroupCustomization; sourceTree = "<group>"; };
-		8448CBF21663F010000382C8 /* MainMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MainMenu; path = Resource/MainMenu; sourceTree = "<group>"; };
-		8448CBF31663F010000382C8 /* mmdot */ = {isa = PBXFileReference; lastKnownFileType = folder; name = mmdot; path = Resource/mmdot; sourceTree = "<group>"; };
 		8448CBF41663F010000382C8 /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = Resource/music; sourceTree = "<group>"; };
 		8448CBF51663F010000382C8 /* pointer_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pointer_2.png; path = Resource/pointer_2.png; sourceTree = "<group>"; };
-		8448CBF61663F010000382C8 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pointer.png; path = Resource/pointer.png; sourceTree = "<group>"; };
 		8448CBF71663F010000382C8 /* pointer.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = pointer.psd; path = Resource/pointer.psd; sourceTree = "<group>"; };
-		8448CBF81663F010000382C8 /* RewindAnimation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RewindAnimation; path = Resource/RewindAnimation; sourceTree = "<group>"; };
-		8448CBF91663F010000382C8 /* RightControl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RightControl; path = Resource/RightControl; sourceTree = "<group>"; };
-		8448CBFA1663F010000382C8 /* SN_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SN_icons; path = Resource/SN_icons; sourceTree = "<group>"; };
 		8448CBFB1663F010000382C8 /* sonic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sonic.plist; path = Resource/sonic.plist; sourceTree = "<group>"; };
 		8448CBFC1663F010000382C8 /* sonic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sonic.png; path = Resource/sonic.png; sourceTree = "<group>"; };
 		8448CBFD1663F010000382C8 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = Resource/sounds; sourceTree = "<group>"; };
-		8448CBFE1663F010000382C8 /* SubMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SubMenu; path = Resource/SubMenu; sourceTree = "<group>"; };
-		8448CBFF1663F010000382C8 /* Timer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Timer; path = Resource/Timer; sourceTree = "<group>"; };
-		8448CC001663F010000382C8 /* tokens */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tokens; path = Resource/tokens; sourceTree = "<group>"; };
-		8448CC011663F010000382C8 /* winners */ = {isa = PBXFileReference; lastKnownFileType = folder; name = winners; path = Resource/winners; sourceTree = "<group>"; };
 		8448CC021663F010000382C8 /* wordbase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = wordbase.xml; path = Resource/wordbase.xml; sourceTree = "<group>"; };
 		8448CC1C1663F05F000382C8 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		8448CC2D1663F4EE000382C8 /* facebook-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "facebook-ios-sdk"; sourceTree = "<group>"; };
 		8448CC2F1663F509000382C8 /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfacebook_ios_sdk.a; path = "Croco_v2/facebook-ios-sdk/libfacebook_ios_sdk.a"; sourceTree = "<group>"; };
 		8448CC311664074D000382C8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		84CC6C2016690A2A0019B3FC /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = Classes/AppMacros.h; sourceTree = "<group>"; };
+		84E5F28A16691C7000E0C93D /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -804,30 +777,16 @@
 		8448C9291663EC3E000382C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8448CBEA1663F010000382C8 /* anim */,
-				8448CBEB1663F010000382C8 /* c_big.png */,
+				844405061669245300747D2A /* hd */,
+				84E5F28A16691C7000E0C93D /* ipad */,
 				8448CBEC1663F010000382C8 /* cards.xml */,
-				8448CBED1663F010000382C8 /* desk-HD.png */,
-				8448CBEE1663F010000382C8 /* desk.png */,
 				8448CBEF1663F010000382C8 /* fonts */,
-				8448CBF01663F010000382C8 /* GameMenu */,
-				8448CBF11663F010000382C8 /* GroupCustomization */,
-				8448CBF21663F010000382C8 /* MainMenu */,
-				8448CBF31663F010000382C8 /* mmdot */,
 				8448CBF41663F010000382C8 /* music */,
 				8448CBF51663F010000382C8 /* pointer_2.png */,
-				8448CBF61663F010000382C8 /* pointer.png */,
 				8448CBF71663F010000382C8 /* pointer.psd */,
-				8448CBF81663F010000382C8 /* RewindAnimation */,
-				8448CBF91663F010000382C8 /* RightControl */,
-				8448CBFA1663F010000382C8 /* SN_icons */,
 				8448CBFB1663F010000382C8 /* sonic.plist */,
 				8448CBFC1663F010000382C8 /* sonic.png */,
 				8448CBFD1663F010000382C8 /* sounds */,
-				8448CBFE1663F010000382C8 /* SubMenu */,
-				8448CBFF1663F010000382C8 /* Timer */,
-				8448CC001663F010000382C8 /* tokens */,
-				8448CC011663F010000382C8 /* winners */,
 				8448CC021663F010000382C8 /* wordbase.xml */,
 				8448C92A1663EC3E000382C8 /* CloseNormal.png */,
 				8448C92C1663EC3E000382C8 /* CloseSelected.png */,
@@ -1642,6 +1601,7 @@
 			isa = PBXGroup;
 			children = (
 				8448CC2D1663F4EE000382C8 /* facebook-ios-sdk */,
+				84CC6C2016690A2A0019B3FC /* AppMacros.h */,
 				8448CBC41663EFE7000382C8 /* CCScrollLayer.cpp */,
 				8448CBC51663EFE7000382C8 /* CCScrollLayer.h */,
 				8448CBC61663EFE8000382C8 /* Credits.cpp */,
@@ -1737,32 +1697,18 @@
 				8448C93D1663EC3F000382C8 /* Icon@2x.png in Resources */,
 				8448C93F1663EC3F000382C8 /* iTunesArtwork in Resources */,
 				8448C9D11663EC41000382C8 /* ChangeLog in Resources */,
-				8448CC031663F010000382C8 /* anim in Resources */,
-				8448CC041663F010000382C8 /* c_big.png in Resources */,
 				8448CC051663F010000382C8 /* cards.xml in Resources */,
-				8448CC061663F010000382C8 /* desk-HD.png in Resources */,
-				8448CC071663F010000382C8 /* desk.png in Resources */,
 				8448CC081663F010000382C8 /* fonts in Resources */,
-				8448CC091663F010000382C8 /* GameMenu in Resources */,
-				8448CC0A1663F010000382C8 /* GroupCustomization in Resources */,
-				8448CC0B1663F010000382C8 /* MainMenu in Resources */,
-				8448CC0C1663F010000382C8 /* mmdot in Resources */,
 				8448CC0D1663F010000382C8 /* music in Resources */,
 				8448CC0E1663F010000382C8 /* pointer_2.png in Resources */,
-				8448CC0F1663F010000382C8 /* pointer.png in Resources */,
 				8448CC101663F010000382C8 /* pointer.psd in Resources */,
-				8448CC111663F010000382C8 /* RewindAnimation in Resources */,
-				8448CC121663F010000382C8 /* RightControl in Resources */,
-				8448CC131663F010000382C8 /* SN_icons in Resources */,
 				8448CC141663F010000382C8 /* sonic.plist in Resources */,
 				8448CC151663F010000382C8 /* sonic.png in Resources */,
 				8448CC161663F010000382C8 /* sounds in Resources */,
-				8448CC171663F010000382C8 /* SubMenu in Resources */,
-				8448CC181663F010000382C8 /* Timer in Resources */,
-				8448CC191663F010000382C8 /* tokens in Resources */,
-				8448CC1A1663F010000382C8 /* winners in Resources */,
 				8448CC1B1663F010000382C8 /* wordbase.xml in Resources */,
 				8448CC2E1663F4EE000382C8 /* facebook-ios-sdk in Resources */,
+				84E5F28B16691C7000E0C93D /* ipad in Resources */,
+				844405071669245300747D2A /* hd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

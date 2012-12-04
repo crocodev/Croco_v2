@@ -263,7 +263,7 @@ ActionLayer::ActionLayer(int GameMode, std::string *RedName, std::string *GreenN
 	itm_card3 = CCMenuItemImage::create(RightControl_c3,RightControl_c3,this,menu_selector(ActionLayer::itm_card3Callback));
 	itm_card4 = CCMenuItemImage::create(RightControl_c4,RightControl_c4,this,menu_selector(ActionLayer::itm_card4Callback));
 	itm_card5 = CCMenuItemImage::create(RightControl_c5,RightControl_c5,this,menu_selector(ActionLayer::itm_card5Callback));
-	mn_Cards = CCMenu::create(itm_card3, itm_card4, itm_card5, NULL);
+	mn_Cards = CCMenu::create(itm_card5, itm_card4, itm_card3, NULL);
 	mn_Cards->alignItemsVerticallyWithPadding(CARD_PADDING);
 	addChild(mn_Cards);
 	m_mnCardsX=x+CARD_OFFSET_X;
@@ -754,14 +754,14 @@ void ActionLayer::itm_card3Callback(CCObject* pSender)
     mn_Cards->setTouchEnabled(0);
 	checked_card = CCSprite::create(RightControl_c3);
 	addChild(checked_card,2,CARD_LAYER);
-	checked_card->setPosition(CCPointMake(m_mnCardsX,m_mnCardsY+CARD_HEIGHT+CARD_PADDING));
+	checked_card->setPosition(CCPointMake(m_mnCardsX,m_mnCardsY-CARD_HEIGHT-CARD_PADDING));
 	MoveCardFromControl();
     
     PLAYEFFECT(_sndCheckcard)
 }
 void ActionLayer::MoveCardFromControl()
 {
-	CCActionInterval* move=CCMoveTo::create(0.5f,CCPointMake(m_mnCardsX,m_mnCardsY+2*(126+CARD_PADDING)));
+	CCActionInterval* move=CCMoveTo::create(0.5f,CCPointMake(m_mnCardsX,m_mnCardsY+2*(117+CARD_PADDING)));
 	//CCActionInterval* move_exp_in = (CCActionInterval*)CCEaseExponentialIn::create((CCActionInterval*)(move->copy()->autorelease()));
 	CCActionInterval* move_exp_in = (CCActionInterval*)CCEaseInOut::create((CCActionInterval*)(move->copy()->autorelease()),4.0f);
     
@@ -790,6 +790,9 @@ void ActionLayer::MoveCardFromControlCallback()
 }
 void ActionLayer::MoveCardFaceSide()
 {
+    //def icon of activity
+    CCSprite* s_Activity;
+    
 	float posx,posy;
 	posx = checked_card->getPosition().x;
 	posy = checked_card->getPosition().y;
@@ -802,15 +805,8 @@ void ActionLayer::MoveCardFaceSide()
 	sccy = checked_card->getScaleY()/3.4f;
     
 	this->removeChildByTag(CARD_LAYER,1);
-	checked_card = CCSprite::create(_c_big);
 	
-	this->addChild(checked_card,2);
-	checked_card->setPosition(ccp(posx,posy));
-	checked_card->setRotation(rotc);
-	checked_card->setScaleX(sccx);
-	checked_card->setScaleY(sccy);
-	
-	//Word
+    //Word
 	int isr;
     //RED_GENERATOR
     isr=(rand()%10)-8;
@@ -832,15 +828,10 @@ void ActionLayer::MoveCardFaceSide()
         "Нарисуйте на бумаге"
     };
     const char* word_action;
-    if(act[0]=='O') {word_action = word_actions[0]; hint_act=0;}
-    if(act[0]=='P') {word_action = word_actions[1]; hint_act=1;}
-    if(act[0]=='R') {word_action = word_actions[2]; hint_act=2;}
+    if(act[0]=='O') {word_action = word_actions[0]; hint_act=0; s_Activity = CCSprite::create(act_o);}
+    if(act[0]=='P') {word_action = word_actions[1]; hint_act=1; s_Activity = CCSprite::create(act_p);}
+    if(act[0]=='R') {word_action = word_actions[2]; hint_act=2; s_Activity = CCSprite::create(act_r);}
     
-    CCLabelTTF* p_wordaction = CCLabelTTF::create(word_action,FONT_NAME,20);
-    p_wordaction->setColor(ccc3(127, 73, 22));
-    
-	word = CCLabelTTF::create((const char*)dbw->getWord(curCardPrice,&act[0]),FONT_NAME,32);
-    word->setColor(ccc3(79, 46, 14));
     //Установка флага "Красной карты"
     if(isr>0)
     {
@@ -848,23 +839,57 @@ void ActionLayer::MoveCardFaceSide()
     }else{
         RedCard=0;
     }
+    
+    //Check sprite for card (if 'ALL' flag is set)
+    if(RedCard)
+    {
+        checked_card = CCSprite::create(_c_big_all);
+    }else{
+        checked_card = CCSprite::create(_c_big);
+    }
+	
+	this->addChild(checked_card,2);
+	checked_card->setPosition(ccp(posx,posy));
+	checked_card->setRotation(rotc);
+	checked_card->setScaleX(sccx);
+	checked_card->setScaleY(sccy);
+	
+    
+    CCLabelTTF* p_wordaction = CCLabelTTF::create(word_action,FONT_NAME,20);
+    p_wordaction->setColor(ccc3(255, 240, 195));
+    
+    //fix /n-bug
+    unsigned char* wordch = dbw->getWord(curCardPrice,&act[0]);
+    int j=0;
+    while (wordch[j]!='\0') {
+        if(wordch[j]==' ') wordch[j]='\n';
+        j++;
+    }
+    
+	word = CCLabelTTF::create((const char*)wordch,FONT_NAME,32);
+    word->setColor(ccc3(255, 255, 255));
+    
     checked_card->addChild(p_wordaction);
     p_wordaction->setRotation(90.0f);
 	p_wordaction->setPosition(ccp(checked_card->getContentSize().width/4+32.0f,checked_card->getContentSize().height/2));
 	checked_card->addChild(word);
 	word->setRotation(90.0f);
-	word->setPosition(ccp(checked_card->getContentSize().width/4,checked_card->getContentSize().height/2));
+	word->setPosition(ccp(checked_card->getContentSize().width/4-50.0f,checked_card->getContentSize().height/2));
+    
+    //add icon of activity
+    checked_card->addChild(s_Activity);
+    s_Activity->setPosition(ccp(checked_card->getContentSize().width/4+182.0f,checked_card->getContentSize().height/2));
     
 	CCActionInterval* rot = CCRotateTo::create(0.35f,-90.0f);
-	//CCActionInterval* rot_exp_in = (CCActionInterval*)CCEaseOut::create((CCActionInterval*)(rot->copy()->autorelease()),2.0f);
+	//CCActionInterval* rot_exp_in = (CCActionInterval*)CCEaseOut::actionWithAction((CCActionInterval*)(rot->copy()->autorelease()),2.0f);
 	CCActionInterval* rot_exp_in = (CCActionInterval*)CCEaseExponentialOut::create((CCActionInterval*)(rot->copy()->autorelease()));
     
 	CCActionInterval* scale = CCScaleTo::create(0.35f, 1.0f, 1.0f);
-	//CCActionInterval* scale_exp_in = (CCActionInterval*)CCEaseOut::create((CCActionInterval*)(scale->copy()->autorelease()),2.0f);
+	//CCActionInterval* scale_exp_in = (CCActionInterval*)CCEaseOut::actionWithAction((CCActionInterval*)(scale->copy()->autorelease()),2.0f);
 	CCActionInterval* scale_exp_in = (CCActionInterval*)CCEaseExponentialOut::create((CCActionInterval*)(scale->copy()->autorelease()));
     
 	CCActionInterval* move_center = CCMoveTo::create(0.35f,CCPointMake(x,y));
-	//CCActionInterval* move_center_exp_in = (CCActionInterval*)CCEaseOut::create((CCActionInterval*)(move_center->copy()->autorelease()),2.0f);
+	//CCActionInterval* move_center_exp_in = (CCActionInterval*)CCEaseOut::actionWithAction((CCActionInterval*)(move_center->copy()->autorelease()),2.0f);
 	CCActionInterval* move_center_exp_in = (CCActionInterval*)CCEaseExponentialOut::create((CCActionInterval*)(move_center->copy()->autorelease()));
     
 	checked_card->runAction(move_center_exp_in);
@@ -892,7 +917,7 @@ void ActionLayer::itm_card5Callback(CCObject* pSender)
 	mn_Cards->setTouchEnabled(0);
 	checked_card = CCSprite::create(RightControl_c5);
 	addChild(checked_card,2,CARD_LAYER);
-	checked_card->setPosition(CCPointMake(m_mnCardsX,m_mnCardsY-CARD_HEIGHT-CARD_PADDING));
+	checked_card->setPosition(CCPointMake(m_mnCardsX,m_mnCardsY+CARD_HEIGHT+CARD_PADDING));
 	MoveCardFromControl();
     
     PLAYEFFECT(_sndCheckcard)

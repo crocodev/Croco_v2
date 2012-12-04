@@ -17,7 +17,7 @@ void GroupCustomization::itm_startCallback(CCObject* pSender)
 	CCLayer* pLayer = new ActionLayer(m_GameMode,m_groups[0],m_groups[1],m_groups[2],m_groups[3]);
 	pScene->addChild(pLayer);
 	
-	CCScene* s = CCTransitionFade::transitionWithDuration((1.2f), pScene);
+	CCScene* s = CCTransitionFade::create((1.2f), pScene);
 	pLayer->release();
 	CCDirector::sharedDirector()->replaceScene(s);
 	}
@@ -60,7 +60,7 @@ void KeyboardNotificationLayer::keyboardWillShow(CCIMEKeyboardNotificationInfo& 
         rectTracked.origin.x, rectTracked.origin.y, rectTracked.size.width, rectTracked.size.height);
 	
     // if the keyboard area doesn't intersect with the tracking node area, nothing need to do.
-    if (! CCRect::CCRectIntersectsRect(rectTracked, info.end))
+    if (!rectTracked.intersectsRect(info.end))
     {
         return;
     }
@@ -76,7 +76,7 @@ void KeyboardNotificationLayer::keyboardWillHide(CCIMEKeyboardNotificationInfo& 
 bool KeyboardNotificationLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCLOG("++++++++++++++++++++++++++++++++++++++++++++");
-    m_beginPos = pTouch->locationInView();	
+    m_beginPos = pTouch->getLocationInView();
     m_beginPos = CCDirector::sharedDirector()->convertToGL(m_beginPos);
     return true;
 }
@@ -87,7 +87,7 @@ void KeyboardNotificationLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
         return;
     }
     
-    CCPoint endPos = pTouch->locationInView();	
+    CCPoint endPos = pTouch->getLocationInView();
     endPos = CCDirector::sharedDirector()->convertToGL(endPos);
 
     float delta = 5.0f;
@@ -108,7 +108,7 @@ void KeyboardNotificationLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     CCLOG("KeyboardNotificationLayer:TrackNode at(origin:%f,%f, size:%f,%f)",
         rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 
-    this->onClickTrackNode(CCRect::CCRectContainsPoint(rect, point));
+    this->onClickTrackNode(rect.containsPoint(point));
     CCLOG("----------------------------------");
 }
 
@@ -151,12 +151,12 @@ GroupCustomization::GroupCustomization(int GameMode)
     y = size.height/2;
 
 	//add background sprite
-	CCSprite* background = CCSprite::spriteWithFile(MainMenu_background);
+	CCSprite* background = CCSprite::create(MainMenu_background);
 	addChild(background,0);
 	background->setPosition(ccp(x,y));
     
     //add leather
-	CCSprite* lth = CCSprite::spriteWithFile(GroupCustomization_lead_choise_colors);
+	CCSprite* lth = CCSprite::create(GroupCustomization_lead_choise_colors);
     addChild(lth,0);
     lth->setAnchorPoint(ccp(0.5,1));
 	lth->setPosition(ccp(x,y*2));
@@ -199,13 +199,13 @@ GroupCustomization::GroupCustomization(int GameMode)
 	//scale and opacity elements on disable layer
 	((CurrentGroupLayer*)layers.objectAtIndex(0))->setContentAccess(1);
 
-	CCMenuItem* itm_back = CCMenuItemImage::itemWithNormalImage(GroupCustomization_back,GroupCustomization_back_selected,this,menu_selector(GroupCustomization::itm_backCallback));
+	CCMenuItem* itm_back = CCMenuItemImage::create(GroupCustomization_back,GroupCustomization_back_selected,this,menu_selector(GroupCustomization::itm_backCallback));
 	itm_back->setPosition(ccp(-(x*2/2.2),-(y*2/2.22)));
 
-	CCMenuItem* itm_start = CCMenuItemImage::itemWithNormalImage(GroupCustomization_start,GroupCustomization_start_selected,this,menu_selector(GroupCustomization::itm_startCallback));
+	CCMenuItem* itm_start = CCMenuItemImage::create(GroupCustomization_start,GroupCustomization_start_selected,this,menu_selector(GroupCustomization::itm_startCallback));
 	itm_start->setPosition(ccp(+(x*2/2.27),-(y*2/2.27)));
 
-	CCMenu* mn_GroupCustomization = CCMenu::menuWithItems(itm_back,itm_start,NULL);
+	CCMenu* mn_GroupCustomization = CCMenu::create(itm_back,itm_start,NULL);
 	addChild(mn_GroupCustomization,1);
 	mn_GroupCustomization->setPosition(ccp(x,y));
 }
@@ -231,7 +231,7 @@ bool CurrentGroupLayer::onTextFieldAttachWithIME(CCTextFieldTTF * pSender)
         float adjustVert;// = CCRect::CCRectGetMaxY(info.end) - CCRect::CCRectGetMinY(rectTracked);
         adjustVert = 100.0f;
         CCLOG("TextInputTest:needAdjustVerticalPosition(%f)", adjustVert);
-        CCActionInterval* ai_move = CCEaseInOut::actionWithAction(CCMoveBy::actionWithDuration(0.8f, ccp(0,adjustVert)),2.0f);
+        CCActionInterval* ai_move = CCEaseInOut::create(CCMoveBy::create(0.8f, ccp(0,adjustVert)),2.0f);
         //move all the children node of KeyboardNotificationLayer
         CCArray * children = ((CCLayer*)m_pTextField->getParent())->getChildren();
         CCNode * node = 0;
@@ -260,7 +260,7 @@ bool CurrentGroupLayer::onTextFieldDetachWithIME(CCTextFieldTTF * pSender)
         float adjustVert;// = CCRect::CCRectGetMaxY(info.end) - CCRect::CCRectGetMinY(rectTracked);
         adjustVert = 100.0f;
         CCLOG("TextInputTest:needAdjustVerticalPosition(%f)", adjustVert);
-        CCActionInterval* ai_move = CCEaseBounceOut::actionWithAction(CCMoveBy::actionWithDuration(1.0f, ccp(0,-adjustVert)));
+        CCActionInterval* ai_move = CCEaseBounceOut::create(CCMoveBy::create(1.0f, ccp(0,-adjustVert)));
         //move all the children node of KeyboardNotificationLayer
         CCArray * children = ((CCLayer*)m_pTextField->getParent())->getChildren();
         CCNode * node = 0;
@@ -340,11 +340,11 @@ CurrentGroupLayer::CurrentGroupLayer(int idColor, int index)
     y = size.height/2;
 
 	//Layer with COLOR and LABEL
-	CCLayer* control = CCLayer::node();
+	CCLayer* control = CCLayer::create();
 	addChild(control,1,ID_CONTROLLAYER);
 
 	//Color box
-	CCSprite* s_Color = CCSprite::spriteWithFile(m_colors[color_index]);
+	CCSprite* s_Color = CCSprite::create(m_colors[color_index]);
 	control->addChild(s_Color,1,ID_COLORBOX);
 	s_Color->setPosition(ccp(x,y+80.0f));//relative position of color token icon
 
@@ -363,7 +363,7 @@ CurrentGroupLayer::CurrentGroupLayer(int idColor, int index)
 		*/
 
 	//white stripe
-	CCSprite* sStripe = CCSprite::spriteWithFile(GroupCustomization_stripe);
+	CCSprite* sStripe = CCSprite::create(GroupCustomization_stripe);
 	control->addChild(sStripe,0,ID_STRIPE);
 	sStripe->setPosition(ccp(x,y-90.0f)); //relative position of white stripe
 
@@ -375,10 +375,10 @@ CurrentGroupLayer::CurrentGroupLayer(int idColor, int index)
 
 	//TextInput
     m_nCharLimit = CHAR_LIMIT;
-	m_pTextFieldAction = CCRepeatForever::actionWithAction(
-        (CCActionInterval*)CCSequence::actions(
-            CCFadeOut::actionWithDuration(0.25),
-            CCFadeIn::actionWithDuration(0.25),
+	m_pTextFieldAction = CCRepeatForever::create(
+        (CCActionInterval*)CCSequence::create(
+            CCFadeOut::create(0.25),
+            CCFadeIn::create(0.25),
             0
         ));
     m_pTextFieldAction->retain();
@@ -415,25 +415,25 @@ void CurrentGroupLayer::setContentAccess(bool state)
 {
 	CCLayer* spr = (CCLayer*)this->getChildByTag(ID_CONTROLLAYER);
 	spr->stopAllActions();
-	CCActionInterval* scalein = CCScaleTo::actionWithDuration(0.2f,1.2f,1.2f);
-	CCActionInterval* scaleout = CCScaleTo::actionWithDuration(0.2f,1.0f,1.0f);
+	CCActionInterval* scalein = CCScaleTo::create(0.2f,1.2f,1.2f);
+	CCActionInterval* scaleout = CCScaleTo::create(0.2f,1.0f,1.0f);
 
-	CCActionInterval* fadetoin = CCFadeTo::actionWithDuration(0.2f,255);
-	CCActionInterval* fadetoout = CCFadeTo::actionWithDuration(0.2f,180);
+	CCActionInterval* fadetoin = CCFadeTo::create(0.2f,255);
+	CCActionInterval* fadetoout = CCFadeTo::create(0.2f,180);
 
 	if(state)
 	{
-		((CCSprite*)(spr->getChildByTag(ID_TEXTFIELD)))->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)fadetoin->copy()->autorelease(),2.0f));
-		((CCSprite*)(spr->getChildByTag(ID_COLORBOX)))->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)fadetoin->copy()->autorelease(),2.0f));
-		((CCSprite*)(spr->getChildByTag(ID_STRIPE)))->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)fadetoin->copy()->autorelease(),2.0f));
-		spr->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)scalein->copy()->autorelease(),2.0f));
+		((CCSprite*)(spr->getChildByTag(ID_TEXTFIELD)))->runAction(CCEaseInOut::create((CCActionInterval*)fadetoin->copy()->autorelease(),2.0f));
+		((CCSprite*)(spr->getChildByTag(ID_COLORBOX)))->runAction(CCEaseInOut::create((CCActionInterval*)fadetoin->copy()->autorelease(),2.0f));
+		((CCSprite*)(spr->getChildByTag(ID_STRIPE)))->runAction(CCEaseInOut::create((CCActionInterval*)fadetoin->copy()->autorelease(),2.0f));
+		spr->runAction(CCEaseInOut::create((CCActionInterval*)scalein->copy()->autorelease(),2.0f));
 		m_isAccessable = true;
         
 	} else {
-		((CCSprite*)(spr->getChildByTag(ID_TEXTFIELD)))->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)fadetoout->copy()->autorelease(),2.0f));
-		((CCSprite*)(spr->getChildByTag(ID_COLORBOX)))->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)fadetoout->copy()->autorelease(),2.0f));
-		((CCSprite*)(spr->getChildByTag(ID_STRIPE)))->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)fadetoout->copy()->autorelease(),2.0f));
-		spr->runAction(CCEaseInOut::actionWithAction((CCActionInterval*)scaleout->copy()->autorelease(),2.0f));
+		((CCSprite*)(spr->getChildByTag(ID_TEXTFIELD)))->runAction(CCEaseInOut::create((CCActionInterval*)fadetoout->copy()->autorelease(),2.0f));
+		((CCSprite*)(spr->getChildByTag(ID_COLORBOX)))->runAction(CCEaseInOut::create((CCActionInterval*)fadetoout->copy()->autorelease(),2.0f));
+		((CCSprite*)(spr->getChildByTag(ID_STRIPE)))->runAction(CCEaseInOut::create((CCActionInterval*)fadetoout->copy()->autorelease(),2.0f));
+		spr->runAction(CCEaseInOut::create((CCActionInterval*)scaleout->copy()->autorelease(),2.0f));
 		
 		//hide keyboard
 		this->onClickTrackNode(0);
@@ -456,7 +456,7 @@ void GroupCustomization::setPageIndicator(int currentPage, int count)
 	CCSprite* dots[4];
 	for(int i=0;i<count;i++)
 	{
-		dots[i]=CCSprite::spriteWithFile(GroupCustomization_dot);
+		dots[i]=CCSprite::create(GroupCustomization_dot);
 		pi->addChild(dots[i],2);
 		dots[i]->setPosition(ccp(x-((dots[i]->getContentSize().width*count+interval*count)/count)+i*interval,65));
 		if(i!=currentPage-1) dots[i]->setOpacity(opacity);

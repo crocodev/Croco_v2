@@ -70,7 +70,7 @@ class ActionLayer;
 
 //MainMenu 1
 #define MainMenu_background                 "MainMenu/background.png"
-//GroupCustomization 10
+//GroupCustomization 11
 #define GroupCustomization_start            "GroupCustomization/start.png"
 #define GroupCustomization_start_selected   "GroupCustomization/start_selected.png"
 #define GroupCustomization_back             "GroupCustomization/back.png"
@@ -97,6 +97,11 @@ class ActionLayer;
 //Desk
 #define _desk                               "desk.png"
 #define _c_big                              "c_big.png"
+#define _c_big_all                          "c_big_all.png"
+//Activity
+#define act_o                               "o.png"
+#define act_p                               "p.png"
+#define act_r                               "r.png"
 //GameMenu 10
 #define GameMenu_gamemenu                   "GameMenu/gamemenu.png"
 #define GameMenu_help                       "GameMenu/help.png"
@@ -217,9 +222,9 @@ class ActionLayer;
 //œÓÁËˆËÓÌËÓ‚‡ÌËÂ Í‡Ú
 #define CARD_OFFSET_X		379
 #define CARD_OFFSET_Y		-1
-#define CARD_WIDTH			154
-#define CARD_HEIGHT			126
-#define CARD_PADDING		12
+#define CARD_WIDTH			152
+#define CARD_HEIGHT			114
+#define CARD_PADDING		22
 
 #define TABLEMAX			45
 #define TABLEMIN			0

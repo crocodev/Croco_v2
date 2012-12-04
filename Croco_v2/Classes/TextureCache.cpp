@@ -12,7 +12,7 @@
 using namespace cocos2d;
 
 TextureCacheLayer::TextureCacheLayer()
-: m_nNumberOfSprites(71) //71
+: m_nNumberOfSprites(75) //75
 , m_nNumberOfLoadedSprites(0)
 {
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -68,7 +68,7 @@ TextureCacheLayer::TextureCacheLayer()
     ADDIMAGE(GroupCustomization_yellow)
     ADDIMAGE(GroupCustomization_stripe)
     ADDIMAGE(GroupCustomization_dot)
-    ADDIMAGE(GroupCustomization_lead_choise_colors);
+    ADDIMAGE(GroupCustomization_lead_choise_colors)
     //Timer 11
     ADDIMAGE(Timer_itm_timer_norm)
     ADDIMAGE(Timer_itm_timer_norm_light)
@@ -81,9 +81,14 @@ TextureCacheLayer::TextureCacheLayer()
     ADDIMAGE(Timer_timer_digits_light)
     ADDIMAGE(Timer_timer_digits_passive)
     ADDIMAGE(Timer_timer_forest)
-    //Desk 2
+    //Desk 3
     ADDIMAGE(_desk)
     ADDIMAGE(_c_big)
+    ADDIMAGE(_c_big_all)
+    //Activity 3
+    ADDIMAGE(act_o)
+    ADDIMAGE(act_p)
+    ADDIMAGE(act_r)
     //GameMenu 11
     ADDIMAGE(GameMenu_gamemenu)
     ADDIMAGE(GameMenu_help)
@@ -141,7 +146,7 @@ TextureCacheLayer::TextureCacheLayer()
 void TextureCacheLayer::loadingCallBack(CCObject *obj)
 {
 	++m_nNumberOfLoadedSprites;
-	char tmp[10];
+	char tmp[5];
 	sprintf(tmp,"%d%%", (int)(((float)m_nNumberOfLoadedSprites / m_nNumberOfSprites) * 100));
 	m_pLabelPercent->setString(tmp);
     
