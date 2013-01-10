@@ -64,7 +64,14 @@ bool AppDelegate::applicationDidFinishLaunching()
     {
         CCFileUtils::sharedFileUtils()->setResourceDirectory(mediumResource.directory);
         pDirector->setContentScaleFactor(frameSize.height/designResolutionSize.height);
-    }    
+    }
+    
+    //iphone 4
+    if (frameSize.height < mediumResource.size.height)
+	{
+		CCFileUtils::sharedFileUtils()->setResourceDirectory(mediumResource.directory);
+        pDirector->setContentScaleFactor(frameSize.height/designResolutionSize.height*1.2f);
+	}
     
     // turn on display FPS
     pDirector->setDisplayStats(true);
