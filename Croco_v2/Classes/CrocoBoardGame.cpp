@@ -6,6 +6,10 @@
 
 #include "math.h"
 
+/*
+ test
+ */
+
 CellTable::CellTable(int id, float x, float y, char activity, int F)
 {
 	m_Id = id;
